@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/56d6484122.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/56d6484122.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Quiz</title>
-</head>
-<body>
-   <header class="navbar">
-   <div class="home__icon">home</div>
-   <div class="score">
-       <span class="user-score">0</span>/<span class="current-score">0</span>
-   </div>
-   </header> 
-<main class="quiz">
-    <section class="quiz__contaner">
-        <img class="question__image" src="" alt="">
-        <h2 class="title__question">Questions</h2>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="home__icon">home</div>
+      <div class="score">
+        <span class="user-score">0</span>/<span class="current-score">0</span>
+      </div>
+    </header>
+    <main class="quiz">
+      <section class="quiz__container">
+        <img class="question__image" src="./images/trulli.jpeg" alt="er-trullo"/>
+        <h2 class="title__question">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+          sapiente hic minima cumque illum quisquam nisi odio qui deserun
+        </h2>
         <div class="answers__btns">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
+          <button class="btn-1">1</button>
+          <button class="btn-2">2</button>
+          <button class="btn-3">3</button>
+          <button class="btn-4">4</button>
         </div>
-    </section>
-</main>
-    
-    <script src="script.js"></script>
-</body>
-</html>
+      </section>
+    </main>
+    <footer class="footer">
+      <div id="count-down">20</div>
+      <button id="next-question">next</button>
+    </footer>
 
-<!-- <header class="navbar">
-    <a href="index.html" class="home">
-        <i class="fas fa-home"></i>
-    </a>
-    <div class="score">
-        <span class="user__score">0</span>/<span class="current__score">0</span>
-    </div>
-</header> -->
+    <script src="script.js"></script>
+  </body>
+</html>
