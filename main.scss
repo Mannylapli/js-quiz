@@ -7,36 +7,3 @@
     padding: 0%;
     background-color: black;
 }
-
-body{
-    // text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   min-height: 100vh;
-
-}
-
-.navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-    padding-top: 100px;
-    padding-bottom: 70px;
-  }
-
-.quiz{
-    border: yellow 5px solid;
-
-}
-
-.quiz__container{
-border: 10px solid red;
-background-color: white;
-}
-.current-score{
-    border: red solid 10px;
-}

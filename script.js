@@ -1,0 +1,22 @@
+const homeBtn = document.querySelector('.home__btn');
+console.log(homeBtn);
+const userScoreQs = document.querySelector('.user__score');
+console.log(userScoreQs);
+const currentScoreQs = document.querySelector('.current__score');
+console.log(currentScoreQs);
+const imgDisplayed = document.querySelector('.question__image');
+console.log(imgDisplayed);
+const questionsDisplayed = document.querySelector('.title__question');
+console.log(questionsDisplayed);
+const answerBtns = document.querySelectorAll('.btn');
+console.log(answerBtns);
+const countDownAnswer = document.querySelectorAll('#countdown');
+console.log(countDownAnswer);
+const nextQuesitonBtn = document.querySelectorAll('#next-question');
+console.log(nextQuesitonBtn);
+
+let homeGame = "";
+let score = 0;
+let quizImg = "";
+let quizQuesiton = "";
+let nextBtn = "";
