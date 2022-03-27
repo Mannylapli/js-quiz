@@ -9,6 +9,7 @@
 html, body {
   height: 100%;
   width: 100%;
+  background-image: linear-gradient(to right, aqua, lightgreen, lightblue);
 }
 
 
@@ -22,6 +23,11 @@ html, body {
   padding-top: 100px;
   padding-bottom: 70px;
 } 
+
+.home__icon{
+  text-decoration: none;
+  
+}
 
 .quiz{
   display: flex;
@@ -65,4 +71,15 @@ html, body {
   display: flex;
   justify-content: center;
   align-self: center;
+}
+
+@media (max-width: 600px) {
+  .answers__btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 1em;
+
+  }
 }
