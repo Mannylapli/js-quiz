@@ -1,10 +1,4 @@
 * {
-  margin: 0%;
-  padding: 0%;
-  background-color: black;
-}
-
-* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -12,10 +6,11 @@
   font-size: 16px;
 }
 
-html, body {
-  /* height: 100%;
-  width: 100%; */
-  background-image: linear-gradient(to right, aqua, lightgreen, lightblue);
+html,
+body {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to right, aqua, lightgreen, pink);
 }
 
 .navbar {
@@ -27,6 +22,7 @@ html, body {
   margin: 0 auto;
   padding-top: 50px;
   padding-bottom: 70px;
+  height: 10vh;
 }
 
 .home__icon {
@@ -36,17 +32,23 @@ html, body {
 .quiz {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 70vh;
 }
 
 .question__image {
-  width: 60vw;
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.question__image img {
+  width: 100%;
 }
 
 .title__question {
   display: flex;
   justify-content: center;
+  margin-top: 2em;
 }
 
 .answers__btns {
@@ -57,17 +59,22 @@ html, body {
   row-gap: 1em;
 }
 
-.btn {
+.answers__btns .btn {
   cursor: pointer;
   border-radius: 10px;
+  width: 45vh;
+}
+
+.answers__btns .btn.active {
+  background-color: green;
 }
 
 .footer {
-  margin-top: 3em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
+  height: 20vh;
 }
 
 #count-down {
@@ -82,9 +89,17 @@ html, body {
   align-self: center;
 }
 
-/* .footer{
-  margin-bottom: 20 px;
-} */
+@media (min-width: 600px) {
+  .answers__btns {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .title__question {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
 @media (max-width: 600px) {
   .answers__btns {
     display: flex;
@@ -94,3 +109,5 @@ html, body {
     margin-bottom: 1em;
   }
 }
+
+/*# sourceMappingURL=main.css.map */
