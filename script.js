@@ -42,41 +42,38 @@ const renderQuestion = (initialIndex) => {
     </section>`;
     quiz.innerHTML = '';
     quiz.innerHTML += html;
+
+    const answerBtns = document.querySelectorAll('.btn');
+    answerBtns.forEach((answerBtn) => {
+        answerBtn.addEventListener('click', () => {
+            console.log('button clicked')
+            validateAnswer(answerBtn)
+        });
+    });
+    //WHY IS ANSWERBTNS FUNCTION PLACED ABOVE VALIDATE ANSWER FUNCITON?
+    const validateAnswer = (answerClicked) => {
+        let answerValidation = answerClicked.getAttribute('data-correct');
+        console.log(typeof answerValidation)
+        if(answerValidation === 'true') {
+            updateUserScore(userScore++);
+            answerClicked.classList.add('correct');
+            return console.log('Congratulations! That is the correct answer');
+        } else {
+            answerClicked.classList.add('wrong');
+            return console.log('Sorry that is not correct')
+        }
+    }
+    const updateUserScore = (currentUserScore) => {
+        console.log(currentUserScore)
+        userScoreQs.innerHTML = '';
+        console.log(`The user score is : ${currentUserScore}`)
+        userScoreQs.innerHTML = currentUserScore;
+    }
 }
 
 renderQuestion(currentQuestionIndex)
 
-const answerBtns = document.querySelectorAll('.btn');
-console.log(answerBtns)
 
-
-
-answerBtns.forEach((answerBtn) => {
-    answerBtn.addEventListener('click', () => {
-        console.log('button clicked')
-        validateAnswer(answerBtn)
-    });
-});
-//WHY IS ANSWERBTNS FUNCTION PLACED ABOVE VALIDATE ANSWER FUNCITON?
-const validateAnswer = (answerClicked) => {
-    let answerValidation = answerClicked.getAttribute('data-correct');
-    console.log(typeof answerValidation)
-    if(answerValidation === 'true') {
-        updateUserScore(userScore);
-        answerClicked.classList.add('correct');
-        return console.log('Congratulations! That is the correct answer');
-    } else {
-        answerClicked.classList.add('wrong');
-        return console.log('Sorry that is not correct')
-    }
-}
-
-const updateUserScore = (currentUserScore) => {
-    userScoreQs.innerHTML = '';
-    currentUserScore++;
-    console.log(currentUserScore);
-    userScoreQs.innerHTML = currentUserScore;
-}
 
 const updateQuestionNumber = (currentQuestionNumber) => {
     console.log(currentQuestionNumber)
@@ -94,10 +91,6 @@ const updateQuestionNumber = (currentQuestionNumber) => {
 // If its correct - you want to update both the userScore (left hand side) and the questionNumber (right hand side)
 // Else if its incorrect - you only want to update the questionNumber
 
-nextBtn.addEventListener ('click', () => {
-    updateQuestionNumber(currentQuestion++);
-    renderQuestion(currentQuestionIndex++);
-})
 
 let remainingSeconds = countdown.innerHTML;
 console.log(remainingSeconds);
@@ -114,13 +107,19 @@ const initiateCountdown = () => {
         countdown.innerHTML = "Time's up...";
         countdown.style.color = "#fff";
         document.body.style.backgroundImage = "#red";
-                updateUserScore();
+        updateUserScore();
     }
 }
 
 let runCountdown = setInterval(initiateCountdown, 1000);
 runCountdown;
 
+nextBtn.addEventListener ('click', () => {
+    updateQuestionNumber(currentQuestion++);
+    renderQuestion(currentQuestionIndex++);
+    remainingSeconds = 30;
+    runCountdown;
+})
 //make red class for the wrong ans (class)
 // make sure it gives back the righ "true" or " false" line 85/93
 // makefunctional the countdown.
