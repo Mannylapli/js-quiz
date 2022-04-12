@@ -1,2 +1,2 @@
 # Game-Js
-Hello! this os a quiz videogame developed with vanilla JavaScript.
+Hello! this is a quiz videogame developed with vanilla JavaScript.
